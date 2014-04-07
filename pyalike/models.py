@@ -16,7 +16,7 @@ Base = declarative_base()
 
 # File System Object. For persisting our file signatures
 # Maybe change the name to something like FileSig, FileDigest, FileRecord (maybe not this one, to ambiguous)
-class FSO:
+class FSO(Base):
 
     __tablename__ = 'fsos'
 
