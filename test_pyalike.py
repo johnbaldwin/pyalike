@@ -11,5 +11,5 @@ from tests.test_models import Pyalike_models_TestCase
 # add more tests
 
 if __name__ == '__main__':
-    unitest.main()
+    unittest.main()
 

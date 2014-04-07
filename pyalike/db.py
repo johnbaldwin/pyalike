@@ -12,7 +12,12 @@ class DB(object):
 
     def __init__(self, dbpath, *args, **kwargs):
         self.dbstr = 'sqlite:///'+dbpath
-        self.engine = create_engine(self.dbstr)
+        self.debug = kwargs.get('debug', False)
+
+        if self.debug:
+            print 'DB_Engine path = %s' % self.dbstr
+
+        self.engine = create_engine(self.dbstr, echo=self.debug)
 
         models.Base.metadata.create_all(self.engine)
         Session = sessionmaker(bind=self.engine)

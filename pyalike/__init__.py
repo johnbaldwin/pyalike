@@ -26,9 +26,6 @@ FSO_DIR = 1
 FSO_LINK = 2
 
 
-def make_digest(path, *args, **kwargs):
-    pass
-
-def diff(path, *args, **kwargs):
-    pass
+from .core import make_digest, diff
+from .db import DB
 
